@@ -186,10 +186,9 @@ nav > span{
 
 .box {
   background-color: rgba(180, 180, 180, 0.2);
-  padding: 2px;
   width: 90%;
   height: auto;
-  border-radius: 10px;
+  border-radius: 5px;
   border: solid;
   margin-top: 7px;
   margin-left: 30px;

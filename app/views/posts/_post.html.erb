@@ -1,8 +1,18 @@
 <div class="box center">
   <div class="normal">
-    <a href="/join"><h3><%= post.title %> with <%= post.creator%> at <%= post.location %> at <%=post.datetime%></h3> posted at <%= post.created_at.in_time_zone("Eastern Time (US & Canada)").strftime("%I:%M %p  %m/%d/%y ")%></a>
+    <h4><%= post.title %> with <%= post.creator%> at <%= post.location %> at <%=post.datetime%>
+
+    </h4>
+    <h5>posted at <%= post.created_at.in_time_zone("Eastern Time (US & Canada)").strftime("%I:%M %p  %m/%d/%y ")%>
       <%if current_user.email === post.creator%>
         <span class="float_r"><a href="/posts/<%=post.id%>">Edit</a></span>
       <% end %>
+      <%if current_user.email != post.creator%>
+        <a href="" class="float_r">Join</a>
+      <% end %>
+    </h5>
+
+
+
   </div>
 </div>
