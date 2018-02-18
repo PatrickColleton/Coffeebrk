@@ -1,4 +1,12 @@
-<div class="grid-item-3 center">
+<div class="grid-item-5 center">
+  <% @posts.each do |post| %>
+    <% if !post.joiner? %>
+      <%= render 'post', post: post %>
+    <% end %>
+  <% end %>
+</div>
+
+<div class="grid-item-6 center">
   <% @posts.each do |post| %>
     <% if !post.joiner? %>
       <%= render 'post', post: post %>
