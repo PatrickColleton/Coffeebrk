@@ -1,0 +1,2 @@
+module MymeetingsHelper
+end

@@ -1,0 +1,279 @@
+*{
+  font-family: 'Spectral SC', sans-serif;
+}
+
+/* //////////////////////////////////////////////////////////////////////////////////////////////
+	//   Default Modal Styles   //
+////////////////////////////////////////////////////////////////////////////////////////////// */
+/*   This is the background overlay   */
+.backgroundOverlay {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	background: #000000;
+	opacity: .85;
+	filter: alpha(opacity=85);
+	-moz-opacity: .85;
+	z-index: 101;
+	display: none;
+}
+/*   This is the Popup Window   */
+.delayedPopupWindow {
+	display: none;
+	position: fixed;
+	width: auto;
+	max-width: 480px;
+	height: 310px;
+	top: 50%;
+	left: 50%;
+	margin-left: -260px;
+	margin-top: -180px;
+	background-color: #efefef;
+	border: 2px solid #333;
+	z-index: 102;
+	padding: 10px 20px;
+}
+/*   This is the closing button  */
+#btnClose {
+	width:100%;
+	display: block;
+	text-align: right;
+	text-decoration: none;
+	color: #BCBCBC;
+}
+/*   This is the closing button hover state  */
+#btnClose:hover {
+	color: #c90c12;
+}
+/*   This is the description headline and paragraph for the form   */
+#delayedPopup > div.formDescription {
+	float: left;
+	display: block;
+	width: 44%;
+	padding: 1% 3%;
+	font-size: 18px;
+	color: #666;
+	clear: left;
+}
+/*   This is the styling for the form's headline   */
+#delayedPopup > div.formDescription h2 {
+	color: #444444;
+	font-size: 36px;
+	line-height: 40px;
+}
+
+/*
+////////// MailChimp Signup Form //////////////////////////////
+*/
+
+/*   This is the signup form body  */
+#delayedPopup #mc_embed_signup {
+	float: left;
+	width: 47%;
+	padding: 1%;
+	display: block;
+	font-size: 16px;
+	color: #666;
+	margin-left: 1%;
+}
+/*   This is the styling for the signup form inputs  */
+#delayedPopup #mc-embedded-subscribe-form input {
+	width: 95%;
+	height: 30px;
+	font-size: 18px;
+	padding: 3px;
+  margin-bottom: 5px;
+}
+/*   This is the styling for the signup form inputs when they are being hovered with the mouse  */
+#delayedPopup #mc-embedded-subscribe-form input:hover {
+	border:solid 2px #40c348;
+	box-shadow: 0 1px 3px #AAAAAA;
+}
+/*   This is the styling for the signup form inputs when they are focused  */
+#delayedPopup #mc-embedded-subscribe-form input:focus {
+	border:solid 2px #40c348;
+	box-shadow: none;
+}
+/*   This is the styling for the signup form submit button  */
+#delayedPopup #mc-embedded-subscribe {
+	width: 100%!important;
+	height: 40px!important;
+	margin: 10px auto 0 auto;
+	background: #5D9E62;
+	border: none;
+	color: #fff;
+}
+/*   This is the styling for the signup form submit button hover state  */
+#delayedPopup #mc-embedded-subscribe:hover {
+	background: #40c348;
+	color: #fff;
+	box-shadow:none!important;
+	cursor: pointer;
+}
+body {
+  margin: 0px;
+}
+
+.container {
+  width: 100%;
+  height: 80vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 518px 1000px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url("like_coffee.png");
+}
+
+.container2 {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  grid-row: 1 / 2;
+  grid-column: 1 / 4;
+}
+
+.container3 {
+  width: 100%;
+  height: 80vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 408px 1fr;
+  background-color: rgba(0,0,0,0.5);
+}
+
+nav{
+  grid-column-start: 1;
+  grid-column-end: 4;
+  display: inline;
+  line-height: 60px;
+  position:fixed;
+  width: 100%;
+  text-align: right;
+  background-color: rgba(158,76,0,0.95);
+}
+
+.spacer {
+  width: 100%;
+  height: 60px;
+  display: block;
+}
+
+nav > span{
+  font-size: 25px;
+  padding-right: 40px;
+  color: #CCB281;
+}
+
+.banner{
+  font-size: 70px;
+  margin-bottom: 0px;
+  margin-top: 0px;
+}
+
+.fullWidth {
+  width: 100%;
+  display: block;
+}
+
+.box {
+  background-color: rgba(180, 180, 180, 0.2);
+  padding: 2px;
+  width: 90%;
+  height: auto;
+  border-radius: 10px;
+  border: solid;
+  margin-top: 7px;
+  margin-left: 30px;
+}
+
+a {
+  text-decoration: none;
+  color: #CCB281;
+}
+
+.textBackground{
+  background-color: gray;
+  text-align: center;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.normal{
+  color: gray;
+  text-align: center;
+  width: 100%;
+  display: block;
+}
+
+.grid-item-2 {
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
+}
+
+.grid-item-3 {
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+  padding-top: 0px;
+}
+
+.grid-item-4 {
+  grid-column: 3 / 4;
+  grid-row: 2 / 3;
+}
+
+.grid-item-5 {
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
+}
+
+.grid-item-6 {
+  grid-column: 2 / 3;
+  grid-row: 3 / 4;
+}
+
+.grid-item-7 {
+  grid-column: 3 / 4;
+  grid-row: 3 / 4;
+}
+
+.center {
+  text-align: center;
+}
+
+
+.float_l {
+  float: left;
+  padding-left: 10px;
+}
+
+.float_r {
+  float: right;
+}
+
+.top {
+  vertical-align: text-top;
+}
+
+.longdesc{
+  resize: none;
+}
+
+.pad_l{
+  padding-left: 20px;
+}
+
+.pad_top{
+  padding-top: 20px;
+}
+
+.border{
+  border: 1px;
+}

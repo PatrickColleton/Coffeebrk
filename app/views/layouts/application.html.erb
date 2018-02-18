@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Coffee&lt;br&gt;</title>
+    <%= csrf_meta_tags %>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js" charset="utf-8"></script>
+    <link href="https://fonts.googleapis.com/css?family=Spectral+SC" rel="stylesheet">
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <div class='container'>
+      <%= render 'layouts/navbar' %>
+      <div class="grid-item-4">
+        <p class="notice"><%= notice %></p>
+        <p class="alert"><%= alert %></p>
+      </div>
+
+    </div>
+    <%= yield %>
+
+    <script>
+
+    $(document).ready(function ()
+    {
+    	//Fade in delay for the background overlay (control timing here)
+    	$("#bkgOverlay").delay(500).fadeIn(400);
+      //Fade in delay for the popup (control timing here)
+    	$("#delayedPopup").delay(500).fadeIn(400);
+
+    	//Hide dialouge and background when the user clicks the close button
+    	$("#btnClose").click(function (e)
+    	{
+    		HideDialog();
+    		e.preventDefault();
+    	});
+    });
+    //Controls how the modal popup is closed with the close button
+    function HideDialog()
+    {
+    	$("#bkgOverlay").fadeOut(400);
+    	$("#delayedPopup").fadeOut(300);
+    }
+    </script>
+
+  </body>
+</html>

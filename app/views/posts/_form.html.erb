@@ -1,0 +1,21 @@
+<%= form_with model: @post, local: true do |form| %>
+  <%= form.hidden_field :creator, value: current_user.email%>
+  <div class="form-field"><br>
+    <%= form.label :title %>
+    <br>
+    <%= form.text_field :title, size: 50 %>
+  </div>
+  <div class="form-field">
+    <%= form.label :location %>
+    <br>
+    <%= form.text_field :location, size: 50 %>
+  </div>
+  <div class="form-field">
+    <%= form.label :"Date and Time" %>
+    <br>
+    <%= form.text_field :datetime, size: 50 %>
+  </div>
+  <div class="form-field">
+    <%= form.submit %>
+  </div>
+<% end %>
