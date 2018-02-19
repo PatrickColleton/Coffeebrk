@@ -1,0 +1,6 @@
+<%= form_with model: @post, local: true do |form| %>
+  <%= form.hidden_field :joiner, value: current_user.email%>
+  <div class="form-field">
+    <%= form.submit %>
+  </div>
+<% end %>

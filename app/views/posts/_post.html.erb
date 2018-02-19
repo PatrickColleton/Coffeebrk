@@ -3,20 +3,21 @@
     <%if post.creator? && post.joiner%>
       <h1 class="center">Matched!</h1>
     <% end %>
-    <h4><%= post.title %> with <%= post.creator%> at <%= post.location %> at <%=post.datetime%></h4>
+    <h4><%= post.title %> with <%= post.creator%> at <%= post.location %> at <%=post.datetime.in_time_zone("Eastern Time (US & Canada)").strftime("%I:%M %p  %m/%d/%y ")%>
+      <%if post.joiner?%>
+        with <%=post.joiner%>
+      <% end %>
+    </h4>
     <h5>posted at <%= post.created_at.in_time_zone("Eastern Time (US & Canada)").strftime("%I:%M %p  %m/%d/%y ")%>
       <%if current_user.email === post.creator%>
         <span class="float_r"><a href="/posts/<%=post.id%>">Edit Meeting</a></span>
       <% end %>
       <%if current_user.email != post.creator%>
-        <a href="" class="float_r">Join Meeting</a>
+        <%= link_to "Join Meeting", edit_post_path(post.id) %>
       <% end %>
       <%if current_user.email != post.creator && current_user.email === post.joiner%>
         <a href="" class="float_r">Leave Meeting</a>
       <% end %>
     </h5>
-
-
-
   </div>
 </div>

@@ -1,5 +1,8 @@
 <h1>Edit Post</h1>
-
-<%= render 'form' %>
+<%if current_user.email = @post.creator%>
+  <%= render 'form' %>
+<%else%>
+  <%= render 'form2' %>
+<%end%>
 
 <%= link_to 'back', posts_path %>
