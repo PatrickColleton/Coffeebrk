@@ -1,32 +1,34 @@
 <%= form_with model: @post, local: true do |form| %>
-  <%if @post.creator === current_user.email || !@post.creator?%>
-    <%= form.hidden_field :creator, value: current_user.email%>
-    <div class="form-field"><br>
-      <%= form.label :title %>
-      <br>
-      <%= form.text_field :title, size: 50 %>
-    </div>
-    <div class="form-field">
-      <%= form.label :location %>
-      <br>
-      <%= form.text_field :location, size: 50 %>
-    </div>
-    <div class="form-field">
-      <%= form.label :"Date and Time" %>
-      <br>
-      <%= form.datetime_local_field :datetime%>
-    </div>
-  <%else%>
-    <%if @post.joiner?%>
-      Click The Button To Leave This Meeting
-      <%= form.hidden_field :joiner, value: nil%>
+  <h2>
+    <%if @post.creator === current_user.email || !@post.creator?%>
+      <%= form.hidden_field :creator, value: current_user.email%>
+      <div class="form-field"><br>
+        <%= form.label :"Meeting Title" %>
+        <br>
+        <%= form.text_field :title, size: 50 %>
+      </div>
+      <div class="form-field">
+        <%= form.label :location %>
+        <br>
+        <%= form.text_field :location, size: 50 %>
+      </div>
+      <div class="form-field">
+        <%= form.label :"Date and Time" %>
+        <br>
+        <%= form.datetime_local_field :datetime%>
+      </div>
     <%else%>
-      Click The Button To Join This Meeting
-      <%= form.hidden_field :joiner, value: current_user.email%>
+      <%if @post.joiner?%>
+        Click The Button To Leave This Meeting
+        <%= form.hidden_field :joiner, value: nil%>
+      <%else%>
+        Click The Button To Join This Meeting
+        <%= form.hidden_field :joiner, value: current_user.email%>
+      <%end%>
     <%end%>
-  <%end%>
 
-  <div class="form-field">
-    <%= form.submit %>
-  </div>
+    <div class="form-field">
+      <%= form.submit %>
+    </div>
+  </h2>
 <% end %>
