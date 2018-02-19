@@ -13,7 +13,7 @@
         <span class="float_r"><a href="/posts/<%=post.id%>">Edit Meeting</a></span>
       <% end %>
       <%if current_user.email != post.creator%>
-        <%= link_to "Join Meeting", edit_post_path(post.id) %>
+        <%= link_to "Join Meeting", %>
       <% end %>
       <%if current_user.email != post.creator && current_user.email === post.joiner%>
         <a href="" class="float_r">Leave Meeting</a>
