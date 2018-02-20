@@ -1,4 +1,4 @@
-<div class="center grid-item-3">
+<div class="grid-item-3">
   <%= form_with model: @post, local: true do |form| %>
     <h2>
       <%if @post.creator === current_user.email || !@post.creator?%>
@@ -20,12 +20,18 @@
         </div>
       <%else%>
         <%if @post.joiner?%>
-          Click The Button To Leave This Meeting
+          Leave This Meeting? <br>
           <%= form.hidden_field :joiner, value: nil%>
         <%else%>
-          Click The Button To Join This Meeting
+          Join This Meeting? 
           <%= form.hidden_field :joiner, value: current_user.email%>
         <%end%>
+          <h3>
+            Title: <%=@post.title%><br>
+            Host: <%=@post.creator%><br>
+            Time: <%=@post.datetime%><br>
+          </h3>
+
       <%end%>
 
       <div class="form-field">
