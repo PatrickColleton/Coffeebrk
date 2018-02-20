@@ -1,4 +1,4 @@
-<div class="center">
+<div class="center grid-item-3">
   <%= form_with model: @post, local: true do |form| %>
     <h2>
       <%if @post.creator === current_user.email || !@post.creator?%>
@@ -33,4 +33,5 @@
       </div>
     </h2>
   <% end %>
+  <button><%= link_to 'Back', posts_path %></button>
 </div>
