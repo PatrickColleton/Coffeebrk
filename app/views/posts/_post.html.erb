@@ -10,7 +10,7 @@
     </h4>
     <h5>posted at <%= post.created_at.in_time_zone("Eastern Time (US & Canada)").strftime("%I:%M %p  %m/%d/%y ")%>
       <%if current_user.email === post.creator%>
-        <span class="float_r pad_l"><%= link_to "Edit Meeting", edit_post_path(post.id)%></span>
+        <span class="float_r pad_l"><a href="/posts/<%=post.id%>">Edit/Cancel Meeting</a></span>
       <% end %>
       <%if current_user.email != post.creator && !post.joiner?%></span>
         <span class="float_r"><%= link_to "Join Meeting", edit_post_path(post.id)%>
