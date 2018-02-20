@@ -2,6 +2,7 @@
 
 <div class="grid-item-5 center">
   <h1>Open Meetings</h1>
+  <h3>Click join to meet someone new. Click Edit/Cancel for meetings you host.</h3>
   <% @posts.each do |post| %>
     <% if !post.joiner? %>
       <%= render 'post', post: post %>
@@ -11,6 +12,7 @@
 
 <div class="grid-item-4 center">
   <h1>My Meetings</h1>
+  <h3>Meetings you're hosting, or someone else's you've joined.</h3>
   <% @posts.each do |post| %>
     <% if current_user.email === post.creator || current_user.email === post.joiner %>
       <%= render 'post', post: post %>

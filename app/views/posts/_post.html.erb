@@ -3,7 +3,7 @@
     <%if post.creator? && post.joiner?%>
       <h2 class="center">Matched!</h2>
     <% end %>
-    <h4><%= post.title %> with <%= post.creator%> at <%= post.location %> at <%=post.datetime.in_time_zone("Eastern Time (US & Canada)").strftime("%I:%M %p  %m/%d/%y ")%>
+    <h4><%= post.title %> hosted by <%= post.creator%> at <%= post.location %> at <%=post.datetime.in_time_zone("Eastern Time (US & Canada)").strftime("%I:%M %p  %m/%d/%y ")%>
       <%if post.joiner?%>
         with <%=post.joiner%>
       <% end %>
